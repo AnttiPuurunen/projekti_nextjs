@@ -8,8 +8,8 @@
     @apply mt-5 text-5xl font-bold text-black sm:text-6xl;
   }
 
-.h2_text {
-    @apply mt-5 text-5xl font-bold text-black sm:text-7xl;
+.secondary_header_text {
+    @apply p-6 text-lg text-black sm:text-3xl;
   }
 
 .search_input {
@@ -42,5 +42,9 @@
 
 .outline_button {
     @apply rounded-full border border-black bg-transparent py-1.5 px-5 text-black transition-all hover:bg-black hover:text-white text-center text-sm flex items-center justify-center;
+  }
+
+.weathercam_search_results {
+    @apply flex-1 items-center break-inside-avoid columns-1 rounded-lg border border-gray-300 bg-white/20 bg-clip-padding p-6 pb-4 backdrop-blur-lg backdrop-filter md:w-1/2 w-full h-fit;
   }
   

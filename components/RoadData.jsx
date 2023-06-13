@@ -10,7 +10,7 @@ const RoadList = ({ search }) => {
                 <Road
                     key={item.id}
                     id={item.id}
-                    name={item.properties.name}
+                    name={item.properties.name.replace(/_/g, " ")}
                 />
             ))
             }
@@ -25,10 +25,18 @@ const RoadData = () => {
     const [searchResults, setSearchResults] = useState([]);
 
     const fetchRoadData = async () => {
-        const response = await fetch("https://tie.digitraffic.fi/api/weathercam/v1/stations");
-        const data = await response.json();
+        try {
+            const response = await fetch("https://tie.digitraffic.fi/api/weathercam/v1/stations");
+            
+            if (!response.ok) {
+                console.log("Tapahtui virhe: " + response.status);
+            }
 
-        setAllRoads(data.features);
+            const data = await response.json();
+            setAllRoads(data.features);
+        } catch (error) {
+            console.log("Tapahtui virhe: " + error);
+        }   
     };
 
     useEffect(() => {
@@ -51,7 +59,7 @@ const RoadData = () => {
 
     return (
         <div>
-            <h2 className='h2_text flex-center'>Hae</h2>
+            <h2 className='secondary_header_text flex-center'>Hae tiekameroiden ja niiden lähimpien sääasemien tietoja</h2>
             <form className='relative w-full flex-center'>
                 <input
                     type='text'
@@ -65,8 +73,9 @@ const RoadData = () => {
                 <RoadList
                     search={searchResults} />
             ) : (
-                <RoadList
-                    search={allRoads} />
+                <div className='flex-center pt-4'>
+                    <p>Löydettiin {allRoads.length} kpl kohteita. Rajaa hakua.</p>
+                </div>
             )}
         </div>
     );
