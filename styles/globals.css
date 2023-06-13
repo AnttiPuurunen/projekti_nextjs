@@ -9,11 +9,11 @@
   }
 
 .secondary_header_text {
-    @apply p-6 text-lg text-black sm:text-3xl;
+    @apply p-6 text-lg text-black sm:text-2xl;
   }
 
 .search_input {
-    @apply block w-full rounded-md border border-gray-200 bg-white py-2.5 pl-5 pr-12 text-sm shadow-lg font-medium focus:border-black focus:outline-none focus:ring-0;
+    @apply block w-3/5 md:w-[360px] rounded-md border border-gray-200 bg-white py-2.5 pl-5 pr-12 text-sm shadow-lg font-medium focus:border-black focus:outline-none focus:ring-0;
   }  
 
 .flex-center {
@@ -45,6 +45,13 @@
   }
 
 .weathercam_search_results {
-    @apply flex-1 items-center break-inside-avoid columns-1 rounded-lg border border-gray-300 bg-white/20 bg-clip-padding p-6 pb-4 backdrop-blur-lg backdrop-filter md:w-1/2 w-full h-fit;
+    @apply flex-1 m-6 break-inside-avoid columns-1 rounded-lg border border-gray-300 bg-white/20 bg-clip-padding p-6 pb-4 backdrop-blur-lg backdrop-filter md:w-1/2 w-4/5 h-fit;
   }
-  
+
+.weatherdata_results {
+    @apply flex-1 break-inside-avoid columns-1 rounded-lg bg-white/20 bg-clip-padding backdrop-blur-lg backdrop-filter w-full h-fit;
+  }
+
+.camera_pic_link {
+    @apply rounded bg-transparent py-2 text-black transition-all hover:underline;
+  }

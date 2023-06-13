@@ -56,13 +56,13 @@ const RoadDetailsById = ({ id }) => {
     <div>
       {weatherCam ?
         <div className='weathercam_search_results'>
-          <p>{weatherCam.names.fi}</p>
+          <p>Kameran sijainti: {weatherCam.names.fi}</p>
           <br />
           <p>Kameran tiedot päivitetty: {convertUtcToLocalTime(weatherCam.dataUpdatedTime)}</p>
           <p>Kameran viimeisimmät kuvat eri suuntiin:</p>
           <ul>
           {weatherCam.presets.map((item) => 
-            <li key={item.id}><a href={item.imageUrl}>{item.presentationName}</a></li>)}
+            <li key={item.id} className='camera_pic_link'><a href={item.imageUrl}>{item.presentationName}</a></li>)}
           </ul>
           <br />
           {weatherData ? 
@@ -70,7 +70,7 @@ const RoadDetailsById = ({ id }) => {
           dataUpdated={weatherData.dataUpdatedTime}
           temperature={weatherData.sensorValues[0].value}
           tempUnit={weatherData.sensorValues[0].unit} 
-          roadTemp={weatherData.sensorValues[2].value}/> : <p>Ei säätietoja saatavilla</p>}
+          roadTemp={weatherData.sensorValues[2].name === "TIE_1" ? weatherData.sensorValues[2].value : "Ei tietoja"}/> : <p>Ei säätietoja saatavilla</p>}
         </div> : <p>Ei tietoja</p>
       }
     </div>
