@@ -1,0 +1,46 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.header_text {
+    @apply mt-5 text-5xl font-bold text-black sm:text-6xl;
+  }
+
+.h2_text {
+    @apply mt-5 text-5xl font-bold text-black sm:text-7xl;
+  }
+
+.search_input {
+    @apply block w-full rounded-md border border-gray-200 bg-white py-2.5 pl-5 pr-12 text-sm shadow-lg font-medium focus:border-black focus:outline-none focus:ring-0;
+  }  
+
+.flex-center {
+    @apply flex justify-center items-center;
+  }
+  
+.flex-start {
+    @apply flex justify-start items-start;
+  }
+  
+.flex-end {
+    @apply flex justify-end items-center;
+  }
+  
+.flex-between {
+    @apply flex justify-between;
+  }
+
+.road_search_results {
+    @apply flex-1 items-center break-inside-avoid columns-2 rounded-lg border border-gray-300 bg-white/20 bg-clip-padding p-6 pb-4 backdrop-blur-lg backdrop-filter md:w-[360px] w-full h-fit;
+  }
+
+.roads_layout {
+    @apply space-y-6 py-8 sm:columns-2 sm:gap-6 xl:columns-3;
+  }
+
+.outline_button {
+    @apply rounded-full border border-black bg-transparent py-1.5 px-5 text-black transition-all hover:bg-black hover:text-white text-center text-sm flex items-center justify-center;
+  }
+  
